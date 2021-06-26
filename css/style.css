@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Merriweather Sans", sans-serif;
+  background-color: #f8f8ff;
+  color: #4f2f2f;
+}
+
+.title {
+  max-width: 500px;
+}
+
+.wrapper {
+  max-width: 1440px;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.restart {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #4f2f2f;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.restart:hover {
+  background: #4f2f2f;
+  color: #fff;
+  margin-top: 35px;
+}
+
+.game {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  color: #6f4242;
+  font-size: 24px;
+}
+
+.header .player-X {
+  flex: 1;
+  border-bottom: 5px solid #6f4242;
+  padding-bottom: 8px;
+}
+
+.player-X.active {
+  color: #b29600;
+  border-color: #b29600;
+}
+
+.header .player-O {
+  flex: 1;
+  border-bottom: 5px solid #6f4242;
+  padding-bottom: 8px;
+}
+
+.player-O.active {
+  color: #9f5f5f;
+  border-color: #9f5f5f;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 0;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.board-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.board-tile:not(:nth-child(3n)) {
+  border-right: 3px solid rgba(127, 76, 76, 0.58);
+}
+
+.board-tile:not(:nth-last-child(-n + 3)) {
+  border-bottom: 3px solid rgba(127, 76, 76, 0.58);
+}
+
+.board-tile:hover {
+  background: #ddd;
+}
+
+.tile-x {
+  color: #b29600;
+}
+
+.tile-o {
+  color: #9f5f5f;
+}
+
+.tile-winner span {
+  color: #23ce6b;
+  transition: all 0.7s ease;
+}
+
+.winner {
+  display: none;
+}
+
+.winner-anime {
+  display: flex;
+  flex-direction: column;
+}
+
+.winner-anime h1 {
+  color: #b8860b;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1200px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .left {
+    margin: 50px;
+  }
+}
